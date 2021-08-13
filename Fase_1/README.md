@@ -15,3 +15,7 @@
 ---
 
 ## Controlando el flujo
+*  [SENTENCIA IF](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%201%20(Apuntes)%20-%20Sentencia%20If.ipynb)
+*  [SENTENCIA WHILE](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%202%20(Apuntes)%20-%20Sentencia%20While.ipynb)
+*  [SENTENCIA FOR](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%203%20(Apuntes)%20-%20Sentencia%20For.ipynb)
+*  [POST ANALISIS](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%204%20(Apuntes)%20-%20Post%20analisis.ipynb)

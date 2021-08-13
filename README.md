@@ -1,6 +1,6 @@
 # Data Science ⚙️
 
-_Principios de la Progrmacion, Machine Learning y Deep Learning_
+_Principios de la Programacion, Machine Learning y Deep Learning_
 
 ## Introducción 🚀
 

@@ -2,6 +2,12 @@
 
 ## Introducción informal
 
+*  [NUMEROS](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%201%20(Apuntes)%20-%20Numeros.ipynb)
+*  [TEXTOS](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%202%20(Apuntes)%20-%20Textos.ipynb)
+*  [LISTAS](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%203%20(Apuntes)%20-%20Listas.ipynb)
+*  [LECTURA POR TECLADO](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%204%20(Apuntes)%20-%20Lectura%20por%20teclado.ipynb)
+*  [PRIMEROS PASOS](https://github.com/OviedoMarco/DataScience/blob/Python/Fase_1/Leccion%205%20(Apuntes)%20-%20Primeros%20pasos.ipynb)
+
 ---
 
 ## Operadores y expresiones

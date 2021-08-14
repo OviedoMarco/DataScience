@@ -16,6 +16,7 @@ _Marco Antonio Oviedo Acevedo_
 
 ___
 *   ## Modulo 0.- [Programación en Python](https://github.com/OviedoMarco/DataScience/tree/Python-%F0%9F%90%8D)
+*   ## Modulo 1.- [Programación en Rstudio](https://github.com/OviedoMarco/DataScience/blob/Rstudio/README.md)
 
 ---
 Elaborado por [OviedoMarco](https://github.com/OviedoMarco) ✒️

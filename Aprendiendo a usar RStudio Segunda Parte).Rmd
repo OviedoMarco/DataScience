@@ -1,0 +1,132 @@
+---
+title: "Aprendiendo a usar RStudio"
+author: "Marco Antonio Oviedo Acevedo"
+date: '25 de Mayo del 2022'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## PREPROCESAMIENTO DE DATOS
+
+R Trabaja con diferentes librerias que contienen funciones especiales y
+nos ayudan a simplificar el análisis y la creación de modelos además del
+tratamiento de los datos
+
+### INSTALACIÓN DE LIBRERIAS
+
+Para instalar 1 libreria usaremos el comando
+`install.packages("nombre_libreria")`
+
+```{r}
+# Intalar tidyverse
+
+#install.packages("tidyverse")
+
+tidyverse::tidyverse_logo() \# Logo de Tidyverse
+
+library(tidyverse)
+
+```
+
+Por si no funciona algo
+
+```{r}
+library(readr) 
+library(dplyr)
+
+```
+
+### ACCESOS A CARPETAS DE TRABAJO
+
+Obtener Carpeta de trabajo
+
+```{r}
+getwd()
+```
+
+Establecer dirección de trabajo
+
+podemos utilizar (\\) o (/)
+
+```{r}
+setwd("C:\\Users\\VICTOR\\Documents\\Curso de Rstudio")  # \\ Para que R sepa que es una direcci?n 
+setwd("C:\\Users\\VICTOR\\Documents\\Curso de Rstudio\\Curso de Rstudio B?sico\\Clase 2")
+setwd("C:/Users/VICTOR/Documents/Curso de Rstudio") # # \\ Para que R sepa que es una direcci?n
+getwd()
+```
+
+### CARGA DE DATOS
+
+Para cargar archivos usaremos la familia de funciones `read_xxx`
+
+-   `read_table`: Lectura de archivos txt con delimitador tabulador
+    ("\t")
+-   `read_csv:` Lectura de archivos csv con delimitador coma (",")
+-   `read_delim`: Lectura de archivos varios con diferentes
+    delimitadores ("\t, \|, &, %")
+-   `read_exce`l: Lectura de archivos excel
+-   `read_fwf`: Lectura de archivos de ancho fijo
+
+dir: Direcci?n del archivo que queremos cargar a R
+
+col_names: True / False dependiendo si el archivo tiene nombres de columna 
+
+col_types: Tipo de dato de cada columna 
+
+na: Valores que R debemanejar como nulos 
+
+delim: delimitador de columnas, solo para read_delim
+
+sheet: Hoja que se desea cargar de excel, solo para read_excel
+
+
+```{r}
+base<- read_csv(".\\german_credit_data.txt")   #poner nombre del archivo por ejemplo read_xxx(".\\nombredelarchivo.xxx")
+base        # Mostramos la base en consola
+view(base)  # Mostramos la base de una forma mas amigable
+```
+
+
+### Atributos de un tibble
+```{r}
+head(base, 2)   # Muestra los primeros n elementos
+tail(base, 3)   # Muestra los ?ltimos n elementos
+view(tail(base, 3))  #Muestra de una manera m?s amigable los ultimos n elementos
+colnames(base)  # Regresa Un vector con los nombres de columnas
+spec(base)      # Estructura del tibble  coloca tambien el tipo de dato de nuestras columans
+```
+
+
+Tipos de datos que manejan los Tibble's (col_types)
+*  col_logical()        [l]
+*  col_integer()        [i]
+*  col_double()         [d]
+*  col_character()      [c]
+*  col_date(format=" ") [D] # Formato R "%Y-%m-%d"  "2021-05-16"
+*  col_time(format=" ") [t]
+     Year: "%Y" (4 digits). "%y" (2 digits)
+     Month: "%m" (2 digits), "%b" (abbreviated name), "%B" (full name).
+     Day: "%d" (2 digits)
+     04-may-2021   %d-%b-%Y   16/05/2021  %d/%m/%Y
+
+     Hour: "%H" or "%I"para AM/PM
+     Minutes: "%M"
+     Seconds: "%S"
+     AM/PM indicator: "%p"
+
+     Shortcuts: "%D" = "%m/%d/%y", "%F" = "%Y-%m-%d", "%R" = "%H:%M", 
+                       "%T" = "%H:%M:%S", "%x" = "%y/%m/%d"
+*  col_factor(levels, ordered) # Levels= NULL -> R especifica el n?mero de clases del factor
+*  col_skip()    # No carga la columna

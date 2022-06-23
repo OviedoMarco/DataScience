@@ -1,0 +1,111 @@
+## Capitulo 6. Gráficos Básicos ####
+
+# •	Gráficos de barras, cajas y puntos
+# •	Gráficos circulares y de fans
+# •	Histogramas y diagramas de densidad de núcleo
+
+# En este capítulo, veremos gráficos que le ayudan a comprender una sola variable categórica 
+# o continua. Este tema incluye
+# •	Visualización de la distribución de una variable
+# •	Comparación de grupos en una variable de resultado
+
+### Capitulo 6.1. Gráficos Básicos #####
+
+# Un gráfico de barras muestra la distribución (frecuencia) de una variable 
+# categórica a través de barras verticales u horizontales
+
+#En su forma más simple, el formato de la función de gráfico de barras es "barplot()"
+
+barplot(height) #donde height es un vector o matriz.
+
+
+# Los datos están contenidos en el marco de datos de Arthritis distribuido con el 
+# paquete vcd. Este paquete no se incluye en la instalación predeterminada de R, 
+# así que instálelo antes del primer uso 
+
+install.packages("vcd")
+
+# Tenga en cuenta que el paquete vcd no es necesario para crear gráficos de barras. 
+# Lo está cargando para obtener acceso al conjunto de datos de Arthritis. 
+# Pero necesitará el paquete vcd al crear espinogramas
+
+#### Capitulo 6.1.1. Parcelas de barras simples #####
+
+# Si la altura es un vector, los valores determinan las alturas de las barras en 
+# la gráfica y se produce una gráfica de barras vertical.  
+# La inclusión de la opción horiz=TRUE produce un gráfico de barras horizontal en su lugar
+
+# La opción "main" agrega un título de trama, mientras que las  opciones "xlab" y "ylab" agregan 
+# etiquetas de eje x y eje y, respectivamente.
+
+library(vcd) # Carga de librerias
+library(grid)
+counts <- table(Arthritis$Improved) #Improved registra los resultados de los pacientes para las personas que reciben un placebo o medicamento
+counts
+
+# se ve que 28 pacientes mostraron una mejoría marcada, 14 mostraron alguna mejoría 
+# y 42 no mostraron mejoría
+
+##### Gráficos de barras simples #####
+
+# •	Gráfico de barra Vertical
+
+barplot(counts,
+        main = "Gráfico de barra simple",
+        xlab = "Mejora", ylab = "Frecuencia")
+
+plot(Arthritis$Improved, main="Gráfico de barra simple",
+     xlab="Mejora", ylab="Frecuencia") #Gráfico sin tabular
+
+# •	Gráfico de barra horizontal
+
+
+barplot(counts,
+        main = "Gráfico de barra horizontal",
+        xlab = "Frecuencia", ylab = "Mejora",
+        horiz = TRUE)
+
+plot(Arthritis$Improved, horiz=TRUE, main="Gráfico de barra horizontal",
+     xlab="Frecuencia", ylab="Mejora") #Gráfico sin tabular
+
+#### Capitulo 6.1.2. Gráficos de barras apiladas y agrupadas #####
+
+# Si height es una matriz en lugar de un vector, el gráfico resultante será un 
+# gráfico de barras apiladas o agrupadas. Si beside=FALSE (el valor predeterminado), 
+# entonces cada columna de la matriz produce una barra en la gráfica, con los valores 
+# en la columna dando las alturas de las "subbarras" apiladas.  Si beside=TRUE, 
+# cada columna de la matriz representa un grupo, y los valores de cada columna se 
+# yuxtaponen en lugar de apilarse.
+
+library(vcd)
+counts <- table(Arthritis$Improved, Arthritis$Treatment) #tabulación cruzada
+counts
+
+##### Gráficos de barras apiladas y agrupadas #####
+
+# •	Gráfico de barra apilada
+
+barplot(counts,
+        main = "Gráfico de barra apilado",
+        xlab = "Tratamiento", ylab = "Frecuencia",
+        col = c("red","yellow", "green"), #"col" para añadir color a las columnas
+        legend=rownames(counts)) #legend para agregar etiqueta
+
+# •	Gráfico de barra agrupada
+
+barplot(counts,
+        main = "Gráfico de barra agrupado",
+        xlab = "Tratamiento", ylab = "Frecuencia",
+        col = c("red","yellow", "green"),#"col" para añadir color a las columnas
+        legend=rownames(counts), beside = TRUE) #legend para agregar etiqueta
+
+#### Capitulo 6.1.3. Gráficos de barras de medias #####
+
+states <- data.frame(state.region, state.x77) #Lectura de datos
+
+means <- aggregate(states$Illiteracy, by=list(state.region), FUN=mean)
+means
+means <- means[order(means$x), ]
+means
+barplot(means$x, names.arg = means$Group.1)
+title("Mean Iliteracy Rate")

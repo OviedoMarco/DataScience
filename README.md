@@ -1,12 +1,11 @@
-# INFERENCIA ESTADISTICA ⚙️
+# Analítica de datos con Rstudio ⚙️
 
 _Facultad de Ciencias Físico Matemáticas_
 
 ## Introducción 🚀
 
 _Repositorio donde se adjuntará evidencia de analítica de datos con el uso de la herramienta en Rstudio donde mostraremos técnicas básicas y avanzadas de visualización, inferencia y modelado matemático 
-R es un lenguaje de programación de código abierto orientado al trabajo con datos y su análisis estadístico, usado principalmente en el ámbito de la investigación matemática y machine learning, minería de datos, etc… Es multiplataforma, por lo que se puede usar en cualquier sistema operativo de escritorio.
- ._
+R es un lenguaje de programación de código abierto orientado al trabajo con datos y su análisis estadístico, usado principalmente en el ámbito de la investigación matemática y machine learning, minería de datos, etc… Es multiplataforma, por lo que se puede usar en cualquier sistema operativo de escritorio._
 
 ### Creadores 📋
 
